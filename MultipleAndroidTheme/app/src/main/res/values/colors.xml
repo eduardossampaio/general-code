@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF9800</color>
+    <color name="colorPrimaryDark">#F57C00</color>
+    <color name="colorPrimaryLight">#FFE0B2</color>
+    <!-- accent color: red -->
+    <color name="colorAccent">#FF5252</color>
+    <!-- text color: white -->
+    <color name="textColorPrimary">#ffffff</color>
+    <color name="textColorSecondary">#dfdbdb</color>
+    <!-- inverse text color: 87% black -->
+    <color name="textColorPrimaryInverse">#DE000000</color>
+    <color name="textColorSecondaryInverse">#9E9E9E</color>
+
+    <color name="start_color">#735858</color>
+    <color name="end_color">#413434</color>
+
+    <!-- theme two -->
+    <color name="colorPrimaryInverse">#3d5459</color>
+    <color name="colorPrimaryDarkInverse">#22292b</color>
+    <color name="colorAccentInverse">#640693</color>
+</resources>
