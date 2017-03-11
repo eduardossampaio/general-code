@@ -1,23 +1,30 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppThemeOne" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppThemeOne" parent="Theme.AppCompat.Light">
         <item name="android:windowBackground">@drawable/apptheme_background_gradient</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorPrimary">@color/textColorPrimary</item>
-        <item name="android:textColorSecondary">@color/textColorSecondary</item>
         <item name="android:textColorHint">@color/textColorSecondary</item>
         <!-- Resources -->
         <item name="app_name_picture">@drawable/app_name</item>
     </style>
 
-    <attr name="app_name_picture" format="reference"/>
+    <attr name="app_name_picture" format="reference" />
 
     <style name="AppThemeTwo" parent="AppThemeTwoBase">
         <item name="app_name_picture">@drawable/app_name_2</item>
     </style>
+
+    <style name="AppThemeOne.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeOne.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppThemeOne.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>
