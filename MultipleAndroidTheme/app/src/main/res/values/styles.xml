@@ -8,13 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorHint">@color/textColorSecondary</item>
         <!-- Resources -->
-        <item name="app_name_picture">@drawable/app_name</item>
+        <item name="app_name_picture">@drawable/sicoobcard</item>
     </style>
 
     <attr name="app_name_picture" format="reference" />
 
     <style name="AppThemeTwo" parent="AppThemeTwoBase">
-        <item name="app_name_picture">@drawable/app_name_2</item>
+        <item name="app_name_picture">@drawable/cecred</item>
     </style>
 
     <style name="AppThemeOne.NoActionBar">

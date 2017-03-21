@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppThemeTwoBase" parent="Theme.AppCompat.Light">
-        <!--<item name="app_name_picture">@drawable/app_name_2</item>-->
+        <item name="android:background">#017359</item>
+        <item name="android:textColorPrimary">#f7f7f7</item>
+        <item name="android:textColorSecondary">#e0e0e0</item>
+        <item name="android:textColorHint">#f2efef</item>
     </style>
 </resources>

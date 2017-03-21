@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.esampaio.apps.contadordecafe.MainActivity">
+
+    <ImageView
+        android:id="@+id/bt_beber_cafe"
+        android:layout_width="180dp"
+        android:layout_height="220dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="25dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/cafe"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="380dp" />
+
+    <TextView
+        android:id="@+id/txt_qtd_cafe_hoje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_cafe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bt_beber_cafe"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txt_qtd_cafe_hoje" />
+</RelativeLayout>
