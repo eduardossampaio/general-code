@@ -11,3 +11,7 @@ alterando além do estilo, algum resources utilizados
 
 * [Contador de café](https://github.com/eduardossampaio/general-code/tree/master/Contadordecafe)
     Aplicativo que te ajuda a contar a quantidade de cafés que você bebe por dia
+
+* [FingerprintManager](https://github.com/eduardossampaio/general-code/tree/master/MyApplication)
+    Exemplo de uso do FingerprintManager da API 23 do Android para autenticação via impressão digital
+ 
