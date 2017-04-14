@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Fingerprint</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_fingerprint">One-touch Sign In</string>
+    <string name="desc_fingerprint">Por favor coloque sua digital no scanenr para verificar sua identificação</string>
+    <string name="note">(Verificação por digital faz com que seu app autentique muito mais rápido. Seu dispositivo deve ter ao menos uma digital registrada nas configurações do sistema)</string>
+    <string name="title_activity_home">Fingerprint</string>
+    <string name="autentication_success">Autenticado com sucesso usando fingerprint</string>
+    <string name="autentication_failed">Erro ao autenticar com fingerprint, verifique se o dedo é seu mesmo</string>
+</resources>
