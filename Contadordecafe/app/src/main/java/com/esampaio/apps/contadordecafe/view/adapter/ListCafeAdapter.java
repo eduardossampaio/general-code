@@ -1,4 +1,4 @@
-package com.esampaio.apps.contadordecafe;
+package com.esampaio.apps.contadordecafe.view.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.esampaio.apps.contadordecafe.R;
 
 /**
  * Created by eduardo on 20/03/17.
@@ -48,7 +50,11 @@ public class ListCafeAdapter extends RecyclerView.Adapter<ListCafeAdapter.ListCa
             holder.maisX.setVisibility(View.VISIBLE);
             holder.viewCafe.setVisibility(View.GONE);
             int excedente = qtdCafes - QTD_MAX_CAFE;
-            holder.textMaisX.setText("+"+excedente);
+            if(excedente==0){
+                holder.textMaisX.setVisibility(View.INVISIBLE);
+            }else {
+                holder.textMaisX.setText("+" + excedente);
+            }
         }
     }
 

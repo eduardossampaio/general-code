@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.esampaio.apps.contadordecafe.MainActivity">
+    tools:context=".view.activity.MainActivity">
 
     <ImageView
         android:id="@+id/bt_beber_cafe"
@@ -36,6 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bt_beber_cafe"
+        android:layout_margin="10dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txt_qtd_cafe_hoje" />
 </RelativeLayout>

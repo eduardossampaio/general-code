@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Cafe count</string>
     <string name="toolbar_name">Contador de café</string>
+
+    <string name="create_db_sql">
+        create table cafes_bebidos(
+	        id INTEGER PRIMARY KEY autoincrement,
+	        data_hora datetime not null
+        )
+    </string>
 </resources>

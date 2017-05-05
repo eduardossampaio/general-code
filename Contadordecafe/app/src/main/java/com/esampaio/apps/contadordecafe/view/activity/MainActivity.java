@@ -1,6 +1,5 @@
-package com.esampaio.apps.contadordecafe;
+package com.esampaio.apps.contadordecafe.view.activity;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +9,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.esampaio.apps.contadordecafe.view.adapter.ListCafeAdapter;
+import com.esampaio.apps.contadordecafe.R;
+import com.esampaio.apps.contadordecafe.persistence.RepositorioCafe;
 
 public class MainActivity extends AppCompatActivity {
 
