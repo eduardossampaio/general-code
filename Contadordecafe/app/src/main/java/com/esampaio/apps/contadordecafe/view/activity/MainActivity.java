@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView btBeberCafe;
     private TextView txtQtdCafeBebido;
-    private RecyclerView listCafes;
+    private TextView titulo;
+    private TextView subtitulo;
     private RepositorioCafe repositorioCafe;
 
     @Override
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         repositorioCafe = new RepositorioCafe(this);
         btBeberCafe = (ImageView) findViewById(R.id.bt_beber_cafe);
         txtQtdCafeBebido = (TextView) findViewById(R.id.txt_qtd_cafe_hoje);
-        listCafes = (RecyclerView) findViewById(R.id.list_cafe);
+        subtitulo = (TextView) findViewById(R.id.subtitulo);
         btBeberCafe.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -43,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        listCafes.setAdapter(new ListCafeAdapter(this));
-        listCafes.setLayoutManager(new GridLayoutManager(this,6));
         loadCafesBebidos();
         ActionBar actionBar = getSupportActionBar();
         if(actionBar!=null){
@@ -53,11 +52,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadCafesBebidos() {
-        String txt = "Quantidade de cafés bebidos hoje: ";
         Integer qtdCafesBebidosHj = repositorioCafe.getQtdCafeHj();
-        txt+=qtdCafesBebidosHj;
-        txtQtdCafeBebido.setText(txt);
-        ((ListCafeAdapter)listCafes.getAdapter()).setQtdCafes(qtdCafesBebidosHj);
+        if(qtdCafesBebidosHj <= 1){
+            subtitulo.setText("Café hoje");
+        }else{
+            subtitulo.setText("Cafés hoje");
+        }
+        txtQtdCafeBebido.setText(String.valueOf(qtdCafesBebidosHj));
     }
     private void beberCafe(){
         repositorioCafe.beberCafeHj();
