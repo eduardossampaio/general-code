@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cafe count</string>
+    <string name="app_name">Contador de café</string>
     <string name="toolbar_name">Contador de café</string>
 
     <string name="create_db_sql">
@@ -8,4 +8,8 @@
 	        data_hora datetime not null
         )
     </string>
+
+    <string name="tab_dia">Diário</string>
+    <string name="tab_mes">Semanal</string>
+    <string name="tab_ano">Mensal</string>
 </resources>

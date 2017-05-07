@@ -19,7 +19,8 @@ public class CafeDAO {
         this.context = context;
     }
     public void beberCafe(){
-        String insertSql = "insert into cafes_bebidos (data_hora) values (datetime('now'));";
+        String insertSql = "insert into cafes_bebidos (data_hora) values (datetime('%s'));";
+        insertSql = String.format(insertSql, format(new Date(System.currentTimeMillis())));
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
         SQLiteDatabase database = databaseHelper.getReadableDatabase();
         database.execSQL(insertSql);

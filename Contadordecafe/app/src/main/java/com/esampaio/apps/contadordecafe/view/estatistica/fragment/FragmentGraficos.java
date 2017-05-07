@@ -1,8 +1,13 @@
-package com.esampaio.apps.contadordecafe.view.activity;
+package com.esampaio.apps.contadordecafe.view.estatistica.fragment;
+
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.esampaio.apps.contadordecafe.R;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
@@ -22,16 +27,27 @@ import com.github.mikephil.charting.data.PieEntry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChartActivity extends AppCompatActivity {
+/**
+ * Created by eduardo on 06/05/17.
+ */
 
+public class FragmentGraficos extends Fragment {
+
+    public static FragmentGraficos newInstance() {
+        Bundle args = new Bundle();
+        FragmentGraficos fragment = new FragmentGraficos();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chart);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_chart, null, false);
 
-        LineChart chart = (LineChart) findViewById(R.id.chart);
-        PieChart pieChart = (PieChart) findViewById(R.id.pie_chart);
-        HorizontalBarChart horizontalBarChart = (HorizontalBarChart) findViewById(R.id.horizontal_bar_chart);
+        LineChart chart = (LineChart) view.findViewById(R.id.chart);
+        PieChart pieChart = (PieChart) view.findViewById(R.id.pie_chart);
+        HorizontalBarChart horizontalBarChart = (HorizontalBarChart) view.findViewById(R.id.horizontal_bar_chart);
 
         List<Entry> entries = new ArrayList<Entry>();
         List<Entry> entries2 = new ArrayList<Entry>();
@@ -91,6 +107,6 @@ public class ChartActivity extends AppCompatActivity {
         BarDataSet barDataSet = new BarDataSet(barEntries, "Cafés no mês");
         barData.addDataSet(barDataSet);
         horizontalBarChart.setData(barData);
-
+        return view;
     }
 }
