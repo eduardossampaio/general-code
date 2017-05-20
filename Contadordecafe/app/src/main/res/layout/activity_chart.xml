@@ -19,17 +19,20 @@
             android:layout_height="wrap_content">
 
             <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/chart"
+                android:id="@+id/lineChart"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="350dp" />
 
             <com.github.mikephil.charting.charts.PieChart
-                android:id="@+id/pie_chart"
+                android:id="@+id/pieChart"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="350dp" />
 
             <com.github.mikephil.charting.charts.HorizontalBarChart
-                android:id="@+id/horizontal_bar_chart"
+                android:id="@+id/barChart"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="350dp" />
         </LinearLayout>
