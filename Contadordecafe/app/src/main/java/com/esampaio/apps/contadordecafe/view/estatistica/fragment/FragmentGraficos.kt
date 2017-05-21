@@ -7,24 +7,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import com.esampaio.apps.contadordecafe.R
-import com.github.mikephil.charting.charts.HorizontalBarChart
-import com.github.mikephil.charting.charts.LineChart
-import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Description
-import com.github.mikephil.charting.data.BarData
-import com.github.mikephil.charting.data.BarDataSet
-import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.data.Entry
-import com.github.mikephil.charting.data.LineData
-import com.github.mikephil.charting.data.LineDataSet
-import com.github.mikephil.charting.data.PieData
-import com.github.mikephil.charting.data.PieDataSet
-import com.github.mikephil.charting.data.PieEntry
+import com.github.mikephil.charting.data.*
 import kotlinx.android.synthetic.main.activity_chart.*
-
-import java.util.ArrayList
+import java.util.*
 
 /**
  * Created by eduardo on 06/05/17.
@@ -32,7 +19,7 @@ import java.util.ArrayList
 
 open class FragmentGraficos : Fragment() {
 
-    fun createPieChart(values: ArrayList<Pair<Float,String>>,description: String){
+    fun createPieChart(values: List<Pair<Float,String>>,description: String){
         pieChart.visibility = View.VISIBLE;
         var pieDataEntries:ArrayList<PieEntry> = ArrayList();
         var pieDataSet: PieDataSet = PieDataSet(pieDataEntries,null)
@@ -41,9 +28,9 @@ open class FragmentGraficos : Fragment() {
                 Color.BLUE, Color.RED,Color.DKGRAY,Color.YELLOW,
                 Color.GRAY, Color.GREEN,Color.CYAN,Color.MAGENTA)
 
-        for(value in values){
-            if(value.first>0) {
-                var entry = PieEntry(value.first as Float, value.second);
+        values.forEach {
+            if(it.first>0){
+                var entry = PieEntry(it.first as Float, it.second);
                 pieDataSet.addEntry(entry);
             }
         }
@@ -51,6 +38,27 @@ open class FragmentGraficos : Fragment() {
         descriptionPizza.text = description;
         pieChart.setDescription(descriptionPizza);
         pieChart.data = PieData(pieDataSet);
+    }
+
+    fun createBarChart(values: List<Pair<Float,String>>,description: String){
+        barChart.visibility = View.VISIBLE
+        var barEntries = mutableListOf<BarEntry>()
+        var barData = BarData();
+        var index = 1F;
+        values.forEach {
+            if(it.first>0) {
+            var barDataSet = BarDataSet(barEntries, it.second);
+                barEntries.add(BarEntry(it.first,index++));
+                barData.addDataSet(barDataSet);
+            }
+        }
+
+
+
+//        barData.setColors(
+//                Color.BLUE, Color.RED,Color.DKGRAY,Color.YELLOW,
+//                Color.GRAY, Color.GREEN,Color.CYAN,Color.MAGENTA)
+        barChart.data = barData;
     }
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.activity_chart, null, false)

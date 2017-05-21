@@ -28,15 +28,17 @@ class GraficosDiarioFragment: FragmentGraficos(){
         var qtdMadrugada = repCafe.getQtdCafeDia(DateUtil.setDateAndTime(hoje,0,0),DateUtil.setDateAndTime(hoje,6,0))
         var qtdManha = repCafe.getQtdCafeDia(DateUtil.setDateAndTime(hoje,6,0),DateUtil.setDateAndTime(hoje,12,0))
         var qtdTarde = repCafe.getQtdCafeDia(DateUtil.setDateAndTime(hoje,12,0),DateUtil.setDateAndTime(hoje,18,0))
-        var qtdNoite = repCafe.getQtdCafeDia(DateUtil.setDateAndTime(hoje,18,0),DateUtil.setDateAndTime(hoje,0,0))
+        var qtdNoite = repCafe.getQtdCafeDia(DateUtil.setDateAndTime(hoje,18,0),DateUtil.setDateAndTime(hoje,23,59))
 
-        var cafesDuranteDia:ArrayList<Pair<Float,String>> = ArrayList();
-        cafesDuranteDia.add(Pair(qtdMadrugada.toFloat(),"Madrugada"))
-        cafesDuranteDia.add(Pair(qtdManha.toFloat(),"Manhã"))
-        cafesDuranteDia.add(Pair(qtdTarde.toFloat(),"Tarde"))
-        cafesDuranteDia.add(Pair(qtdNoite.toFloat(),"Noite"))
+        var cafesDuranteDia = listOf<Pair<Float,String>>(
+                Pair(qtdMadrugada.toFloat(),"Madrugada"),
+                Pair(qtdManha.toFloat(),"Manhã"),
+                Pair(qtdTarde.toFloat(),"Tarde"),
+                Pair(qtdNoite.toFloat(),"Noite")
+        )
+
         createPieChart(cafesDuranteDia,"Cafés ao longo do dia")
-
+        createBarChart(cafesDuranteDia,"Quantidade bebida no dia")
     }
 
     companion object {
