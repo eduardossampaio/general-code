@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Meu primeiro aplicativo Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-if="showTitle">Titulo</h1>
+        <span>Login:</span>
+        <input id="form_login" type="text" v-model="login">
+        <br/>
+        <span>Senha:</span>
+        <input id="form_password" type="password" v-model="password">
+        <br/>
+        <button type="button" @click="submit">Enviar</button>
+
+        <div v-if="Math.random() > 0.5">
+            Agora você me vê
+        </div>
+        <div v-else>
+            Agora você não me vê
+        </div>
+    </div>
+    <div id="example">
+
+        <span>Mensagem original: "{{ message }}"</span>
+        <br/>
+        <span>Mensagem ao contrário: "{{ reversedMessage }}"</span>
+        <br/>
+        <span>{{current_date}}</span>
+        <br/>
+        <button type="button" @click="refreshDate">Atualizar data</button>
+
+
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                hello_message: 'oi Vue',
+                login: '',
+                password: '',
+                showTitle: false
+            },
+            methods: {
+                submit: function () {
+                    console.log("credentials");
+                    console.log(this.login);
+                    console.log(this.password);
+                }
+            }
+        })
+        var app2 = new Vue({
+            el: '#example',
+            data: {
+                message: 'testando mensagem',
+                date: Date.now()
+            },
+            computed: {
+                // uma função "getter" computada (computed getter)
+                reversedMessage: function () {
+                    // `this` aponta para a instância Vue da variável `vm`
+                    return this.message.split('').reverse().join('')
+                },
+                current_date: function () {
+                    this.date = Date.now();
+                    return this.date;
+                }
+            },
+            methods: {
+                refreshDate: function () {
+                    this.date = Date.now()
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

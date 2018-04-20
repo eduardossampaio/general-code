@@ -15,3 +15,12 @@ alterando além do estilo, algum resources utilizados
 * [FingerprintManager](https://github.com/eduardossampaio/general-code/tree/master/FingerprintManagerExample)
     Exemplo de uso do FingerprintManager da API 23 do Android para autenticação via impressão digital
  
+* [Transitions](https://github.com/eduardossampaio/general-code/tree/master/Transitions)
+    Estudo de transitions no Android
+
+* [kotlin-example](https://github.com/eduardossampaio/general-code/tree/master/kotlin-example)
+    Estudo de kotlin
+
+ * [vue](https://github.com/eduardossampaio/general-code/tree/master/vue)
+    Estudo de vue-js
+
